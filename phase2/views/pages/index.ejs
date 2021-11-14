@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, intitial-scale=1">
+        <link rel="stylesheet" href="./css/stylehome.css">
+        <link href="./css/styleHome.css" rel="stylesheet" />
+        <script src="./js/quote.js"></script>
+        <script src="./js/features.js"></script>
+        <script src="./js/button.js"></script>
+        <script src="./js/time.js" defer></script>
+        <link
+           rel="stylesheet"
+           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        />
+        <link
+           rel="stylesheet"
+           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        />
+        <title>The Ballonatic Asylum</title>
+    </head>
+
+    
+    
+    <body>
+
+        <%- include('../partials/header'); %>
+        <main>
+            <%- include('../partials/nav'); %>
+            <div class="hero">
+                <a class="prev-btn"><i class="fas fa-chevron-left"></i></a>
+                <div class="slides-container">
+                  <div class="slide-image">
+                    <img src="./img/homepageimage1.jpeg" alt="image1" />
+                  </div>
+                  <div class="slide-image">
+                    <img src="./img/homebg.jpg" alt="image2" />
+                    
+                  </div>
+                  
+                </div>
+                <a class="next-btn"><i class="fas fa-chevron-right"></i></a>
+        
+                <div class="navigation-dots"></div>
+              </div> 
+
+            <script src="./js/images.js"></script>
+            <div class="mainSection">
+                <div class="section1">
+                    <p class="sectionTitle">Product Features</p>
+                    <div></div>
+                    <div class="slideshow-container">
+                        <% for ( var i = 0; i < products.length; i++ ) { %>
+                        <article class="fade mySlides1">
+                        <img class="randomimage" src=<%= products[i].imageURL %> style="width:200px;height:200px;">
+                            <ul>
+                                <p>Product name: <b><%= products[i].productName %></b></p>
+                                <p>Product category: <b><%= products[i].category %></b></p>
+                                <p>Product color: <b><%= products[i].color %></b></p>
+                                <p>
+                                   Product price per unit: <b><%= products[i].unitPrice %></b>
+                                </p>
+                                <p>
+                                   Product quantity per unit:
+                                   <b><%= products[i].quantityInStock %></b>
+                                </p>
+                                <p>
+                                   Product manufacturer:
+                                   <b><%= products[i].manufacturer %></b>
+                                </p>
+                                <p>
+                                   Product material:
+                                   <b><%= products[i].material %></b>
+                                </p>
+                                <p>
+                                    Product size:
+                                    <b><%= products[i].size %></b>
+                                </p>
+                            </ul>
+                        </article>
+                        <% } %>
+                    </div>
+                    <br />
+
+                    <div style="text-align: center">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                
+                <aside class= "mainAside">
+                    <h4 class= "sectionTitle">Customer Tributes</h4>
+
+                    <article class= "quote" id= "home-quote">
+                        "The balloons only have one life and the only way of finding out whether they work is to attempt to fly around the world. - Richard Branson.
+
+                    </article>
+                   
+                </aside>
+
+            </div>
+
+
+
+
+
+        </main>
+
+        <%- include('../partials/footer'); %>
+
+
+    </body>
+
+</html>

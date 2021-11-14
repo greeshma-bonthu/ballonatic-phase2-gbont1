@@ -1,0 +1,56 @@
+<header id="pageHeader">
+  <a id="logo" href="/">
+    <img src="./img/ballonlogo.png" alt="Logo" />
+    <title>The Balloonatic Asylum</title>
+  </a>
+  <nav class="header-nav">
+    <ul>
+      <li>
+        <div class="header-nav-block">
+          <button class="header-nav-btn" onclick="myProduct()">
+            Products
+          </button>
+          
+        </div>
+      </li>
+      <li>
+        <div class="header-nav-block">
+          <button class="header-nav-btn" onclick="myAbout()">About</button>
+        </div>
+      </li>
+      <li>
+        <div class="header-nav-block">
+          <button class="header-nav-btn" onclick="myContact()">
+            Contact
+          </button>
+        </div>
+      </li>
+     
+      <% if (!user) { %>
+        <li>
+          <div class="header-nav-block">
+            <button class="header-nav-btn" onclick="loginPage()">
+              Login
+            </button>
+          </div>
+        </li>
+        <li>
+          <div class="header-nav-block">
+            <button class="header-nav-btn" onclick="registerPage()">
+              Sign Up
+            </button>
+          </div>
+        </li>
+      <% } %>
+      <% if (user) { %>
+        <li>
+          <div class="header-nav-block">
+            <button class="header-nav-btn" onclick="logoutPage()">
+              Logout
+            </button>
+          </div>
+        </li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
